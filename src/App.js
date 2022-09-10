@@ -1,7 +1,11 @@
 import "./App.css";
-
+import HomePage from "./animations/StartUpScreen.js";
 function App() {
-  return <></>;
+  return (
+    <>
+      <HomePage />
+    </>
+  );
 }
 
 export default App;
