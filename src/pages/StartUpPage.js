@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CommandLineItem from "../animations/CommandLineItem";
 import StartupLines from "../data/startup.json";
 
-export default function StartUpPage(props) {
+export default function StartUpPage() {
   const [StartupLineArray, SetStartupLineArray] = useState([]);
   const [skipAnimation, setSkipAnimation] = useState(false);
   const [username, setUsername] = useState("");
@@ -24,13 +24,6 @@ export default function StartUpPage(props) {
       SetStartupLineArray(StartupLines);
     }
   });
-  function callBackMethod() {
-    props.sendData(username);
-  }
-  function getDatafromChild(val) {
-    setUsername(val);
-    callBackMethod();
-  }
   return (
     <div className="terminal-wrapper" onClick={() => setSkipAnimation(true)}>
       {Array.isArray(StartupLineArray)
@@ -39,7 +32,7 @@ export default function StartUpPage(props) {
           })
         : null}
       {StartupLineArray.length === StartupLines.length ? (
-        <CommandLineItem type={"Input"} sendData={getDatafromChild} />
+        <CommandLineItem type={"Input"} />
       ) : null}
     </div>
   );

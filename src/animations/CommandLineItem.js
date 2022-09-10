@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-
 export default function CommandLineItem(props) {
   const textInput = useRef(null);
   const [username, setUsername] = useState("");
   const handleSubmit = () => {
     callBackMethod();
+    window.location.reload(false);
   };
   useEffect(() => {
     if (props.type === "Input") {
@@ -13,7 +13,7 @@ export default function CommandLineItem(props) {
   }, []);
   function callBackMethod() {
     if (username !== "") {
-      props.sendData(username);
+      localStorage.setItem("username", username);
     }
   }
 
