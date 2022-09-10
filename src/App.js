@@ -1,5 +1,5 @@
 import "./App.css";
-import HomePage from "./animations/StartUpScreen.js";
+import HomePage from "./pages/HomePage";
 function App() {
   return (
     <>

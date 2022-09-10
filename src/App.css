@@ -7,22 +7,39 @@ body {
   margin: 0;
   padding: 0;
 }
+.hstack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  padding-bottom: 1em;
+}
 .terminal-wrapper {
+  padding-top: 0.75em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 0.25em;
-  height: 100vh;
+  gap: 0.5em;
+  min-height: 100vh;
+  height: fit-content;
+  padding-left: 1em;
 }
-.cl-text {
-  font-size: 1em;
+.cl-text,
+.cl-input {
+  font-size: 1.2em;
   margin: 0;
-  margin-left: 1em;
   color: white;
   font-family: "Menlo";
   width: fit-content;
   position: relative;
+  background-color: black;
+  border: none;
+}
+.cl-input {
+  color: #008f11;
+  width: fit-content;
+  width: 5em;
 }
 .cl-text::before {
   content: "";
@@ -32,8 +49,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: black;
-  animation: slowtype_cursor 0.75s linear;
-  animation-iteration-count: 1;
+  animation: slowtype_cursor 0.4s linear;
 }
 .cl-text::after {
   content: "";
@@ -44,10 +60,22 @@ body {
   height: 100%;
   width: 10px;
 }
-.cursor-active {
-  background-color: rgb(145, 145, 145, 0.8);
-  animation: slowtype_cursor 0.75s linear,
-    2s linear 0.25s infinite both running cursor_blink;
+.cl-button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-family: "Menlo";
+  font-weight: bold;
+}
+.cl-button:hover,
+.cl-button:focus {
+  background-color: white;
+  color: black;
+}
+.active-cursor {
+  animation: 2s linear 1s infinite both running cursor_blink;
 }
 .terminal-wrapper {
   background-color: black;
@@ -65,7 +93,7 @@ body {
     background-color: black;
   }
   50% {
-    background-color: rgb(145, 145, 145, 0.8);
+    background-color: #008f11;
   }
   100% {
     background-color: black;

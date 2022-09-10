@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import StartUpScreen from "./StartUpPage.js";
 
 export default function HomePage() {
-  return <></>;
+  const [username, setUsername] = useState("");
+  function getDatafromChild(val) {
+    setUsername(val);
+  }
+  return (
+    <>
+      <StartUpScreen sendData={getDatafromChild} />
+    </>
+  );
 }
