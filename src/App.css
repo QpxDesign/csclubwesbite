@@ -126,7 +126,9 @@ section h1 {
 }
 section h2 {
   margin: 0;
+  text-align: center;
   font-size: 1.5em;
+  padding: 0em 1em;
 }
 section h3 {
   margin: 0;
@@ -158,6 +160,11 @@ section header {
   align-items: flex-start;
   width: 90%;
 }
+@media screen and (max-width: 600px) {
+  .card-wrapper {
+    width: 97%;
+  }
+}
 .card {
   flex: 1 25em;
   max-width: 30em;
@@ -169,7 +176,7 @@ section header {
   flex-direction: column;
   align-items: center;
   color: black;
-  padding: 1.5em;
+  padding: 0.5em;
   padding-bottom: 2em;
   flex-wrap: wrap;
   overflow: scroll none;

@@ -8,7 +8,6 @@ export default function HomePage() {
     localStorage.setItem("username", "");
     window.location.reload(false);
   }
-  console.log(localStorage.getItem("username"));
   if (
     localStorage.getItem("username") === null ||
     localStorage.getItem("username") === ""
@@ -19,7 +18,7 @@ export default function HomePage() {
     <section>
       <header>
         <h1>cs_club</h1>
-        <h2>meetings every tuesday at 11:50am</h2>
+        <h2>meetings every thursday at 12:15pm</h2>
         <h3>
           <BsFillPersonFill />
           {localStorage.getItem("username")}
@@ -27,16 +26,6 @@ export default function HomePage() {
         </h3>
       </header>
       <div className="card-wrapper">
-        <div className="card">
-          <h1>What</h1>
-          <h2>here are just a few examples of what goes on in CS Club</h2>
-          <ul>
-            <li>discussion of events in the world of cs</li>
-            <li>competive coding challenges designed for all skillsets</li>
-            <li>feedback exchange for personal projects</li>
-            <li>collaborative projects</li>
-          </ul>
-        </div>
         <div className="card">
           {" "}
           <h1>Who</h1>
@@ -51,31 +40,42 @@ export default function HomePage() {
               life easier
             </li>
             <li>
-              it would look good on your college ap (don't hold me to that)
+              it would look good on your college app (don't hold me to that)
             </li>
           </ul>
         </div>
         <div className="card">
+          <h1>What</h1>
+          <h2>here are just a few examples of what goes on in CS Club</h2>
+          <ul>
+            <li>discussion of events in the world of cs</li>
+            <li>competive coding challenges designed for all skillsets</li>
+            <li>feedback exchange for personal projects</li>
+            <li>collaborative projects</li>
+          </ul>
+        </div>
+
+        <div className="card">
           {" "}
-          <h1>Where & When</h1>
+          <h1>When & Where</h1>
           <h2>
             We meet in the Computer Science Lab (Room 123) everyweek! Here's our
             schedule:
           </h2>
           <ul>
-            <li>Mon Sep 19th: Club Fair</li>
-            <li>TBD Sep: First Meeting</li>
-            <li>TBD Sep: First Challenge Issued</li>
-            <li>TBD Oct: First Challenge Finished</li>
+            <li>Thrusday, November 10th - Meeting</li>
+            <li>Thrusday, November 17th - Meeting</li>
+            <li>Thrusday, December 1st - Meeting</li>
+            <li>Thrusday, December 8th - Meeting</li>
+            <li>Thrusday, December 15th - Meeting</li>
           </ul>
         </div>
         <div className="card">
           {" "}
           <h1>What's this for?</h1>
           <h2>
-            We plan on using (insert url here) as a hub for challenges,
-            schedules, project showcases, and a whole lot more! (pending school
-            approval). Right now you can take a quick 3 question poll!
+            We plan on using this website as a hub for challenges, schedules,
+            project showcases, and a whole lot more! (pending school approval).
           </h2>
         </div>
         <div className="card">
