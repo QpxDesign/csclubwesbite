@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import StartUpScreen from "./StartUpPage.js";
-import Form from "../components/Form.js";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
+
 export default function HomePage() {
   function handleUserSignout() {
     localStorage.setItem("username", "");
@@ -14,12 +14,6 @@ export default function HomePage() {
     localStorage.getItem("username") === ""
   ) {
     return <StartUpScreen />;
-  }
-  if (
-    localStorage.getItem("formawnsers") === null ||
-    localStorage.getItem("formawnsers") === ""
-  ) {
-    return <Form />;
   }
   return (
     <section>
