@@ -15,6 +15,9 @@ body {
   gap: 1em;
   padding-bottom: 1em;
 }
+.hidden {
+  display: none;
+}
 .terminal-wrapper {
   padding-top: 0.75em;
   display: flex;
@@ -22,6 +25,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 0.5em;
+  overflow: hidden;
   min-height: 100vh;
   height: fit-content;
   padding-left: 1em;
@@ -112,7 +116,8 @@ section {
   flex-direction: column;
   align-items: center;
   color: white;
-  min-height: fit-content;
+  min-height: 100vh;
+  height: fit-content;
 }
 section h1 {
   font-weight: 900;
@@ -149,12 +154,13 @@ section header {
   gap: 1em 1em;
   margin: 3em 0;
   flex-wrap: wrap;
-  align-items: center;
+  margin-top: 1.5em;
+  align-items: flex-start;
+  width: 90%;
 }
 .card {
-  width: 25em;
-  height: 20em;
-  max-width: 90%;
+  flex: 1 25em;
+  max-width: 30em;
   border-radius: 2em;
   background-color: white;
   transition: 0.5s;
@@ -164,7 +170,9 @@ section header {
   align-items: center;
   color: black;
   padding: 1.5em;
-  overflow: none scroll;
+  padding-bottom: 2em;
+  flex-wrap: wrap;
+  overflow: scroll none;
 }
 .card h1 {
   padding: 0.25em 0.5em;
@@ -182,4 +190,45 @@ section header {
   margin-right: auto;
   font-size: 1.25em;
   margin-top: 0.25em;
+}
+.mc-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+.mc-text {
+  font-size: 1em;
+  font-weight: 100;
+  color: white;
+  font-family: "Menlo";
+}
+.choice-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+}
+.choice-wrapper input[type="radio"] {
+  height: 1.25em;
+  width: 1.25em;
+  border-radius: 0;
+  background-color: red;
+}
+.question-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.5em;
+}
+.wi-input {
+  font-size: 1em;
+  padding: 0.25em;
+  width: min(25em, 100%) !important;
+  margin: 0;
+  color: white;
+  font-family: "Menlo";
+  width: fit-content;
+  position: relative;
+  background-color: black;
+  border: 2px solid white;
 }

@@ -5,7 +5,6 @@ import StartupLines from "../data/startup.json";
 export default function StartUpPage() {
   const [StartupLineArray, SetStartupLineArray] = useState([]);
   const [skipAnimation, setSkipAnimation] = useState(false);
-  const [username, setUsername] = useState("");
 
   useEffect(() => {
     if (!skipAnimation) {
@@ -32,7 +31,7 @@ export default function StartUpPage() {
           })
         : null}
       {StartupLineArray.length === StartupLines.length ? (
-        <CommandLineItem type={"Input"} />
+        <CommandLineItem type={"Input"} inputTitle={"username:"} />
       ) : null}
     </div>
   );

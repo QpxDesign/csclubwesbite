@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import StartUpScreen from "./StartUpPage.js";
+import Form from "../components/Form.js";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 export default function HomePage() {
@@ -13,6 +14,12 @@ export default function HomePage() {
     localStorage.getItem("username") === ""
   ) {
     return <StartUpScreen />;
+  }
+  if (
+    localStorage.getItem("formawnsers") === null ||
+    localStorage.getItem("formawnsers") === ""
+  ) {
+    return <Form />;
   }
   return (
     <section>
@@ -77,7 +84,14 @@ export default function HomePage() {
             approval). Right now you can take a quick 3 question poll!
           </h2>
         </div>
-        <div className="card"></div>
+        <div className="card">
+          <h1>Get in Touch</h1>
+          <h2>
+            for now, please message me on github (@qpxdesign) for any assitance
+            with the website. coming soon: a contact system right here on the
+            website!
+          </h2>
+        </div>
       </div>
     </section>
   );

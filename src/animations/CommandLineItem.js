@@ -20,14 +20,17 @@ export default function CommandLineItem(props) {
   if (props.type !== "Input") return <h1 className="cl-text">{props.text}</h1>;
   return (
     <div className="hstack">
-      <h1 className="cl-text">Username:</h1>
+      <h1 className="cl-text">{props.inputTitle}</h1>
       <input
         className="cl-input"
         ref={textInput}
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <button className="cl-button" onClick={() => handleSubmit()}>
+      <button
+        className={username !== "" ? "cl-button" : "hidden"}
+        onClick={() => handleSubmit()}
+      >
         im ready
       </button>
     </div>
